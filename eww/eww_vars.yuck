@@ -1,0 +1,2 @@
+(defpoll HOURS :interval "1s" '~/.config/eww/scripts/hour_format.sh')
+(defpoll MINS :interval "1s" '~/.config/eww/scripts/min_format.sh')

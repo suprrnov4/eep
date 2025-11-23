@@ -1,0 +1,144 @@
+;;      MADE BY suprrNOv4      ;;
+
+;; VARIABLES ;;
+(defpoll HOURS :interval "1s" '~/.config/eww/scripts/hour_format.sh')
+(defpoll MINS :interval "1s" '~/.config/eww/scripts/min_format.sh')
+(defpoll AMPM :interval "1s" '~/.config/eww/scripts/ampm_format.sh')
+
+(defpoll WIFI_STRENGTH :interval "10s" '~/.config/eww/scripts/strength.sh')
+(defpoll WIFI_NAME :interval "10s" '~/.config/eww/scripts/wifi.sh')
+(defpoll BT_DEVICE :interval "10s" '~/.config/eww/scripts/blutu.sh') 
+
+;; TIME ;;
+(defwidget time []
+    (box :orientation "horizontal"
+        :space-evenly false
+        (box    :height "120"    :width "145"    :halign "center"
+        :class "menutime"
+            (label  :text HOURS)
+        )
+        
+        (box :width "20" :halign "center")
+
+        (box    :height "120"    :width "145"    :halign "center"
+        :class "menutime"   :orientation "vertical" :space-evenly false
+            (box    :height "15")
+            (label  :text MINS  :class "smoltext")
+            (label  :text "  " :class "line")
+            (label  :text AMPM  :class "smoltext")
+        )
+    )
+)
+
+;; WIFI ;;
+(defwidget menuwifi []
+    (box :orientation "horizontal"
+        :space-evenly false
+        (box :height "50"   :width "10")
+        (box :height "50"   :width "55"    :class "menumini"
+            (label  :text WIFI_STRENGTH :xalign 0.45))
+        (box :width "15")
+        (box :width "220"   :class "menumini"
+            (label  :text WIFI_NAME))
+        (box :width "10")
+    )
+)
+
+;; DEVICES ;;
+(defwidget menublutu []
+    (box :orientation "horizontal"
+        :space-evenly false
+        (box :height "50"   :width "10")
+        (box :height "50"   :width "55"    :class "menumini"
+        "󰋋")
+        (box :width "15")
+        (box :width "220"   :class "menumini"
+        (label :text BT_DEVICE))
+        (box :width "10")
+    )
+)
+
+;; SLIDERS ;;
+(defwidget dataslider [VAL]
+    (box :height "20"   :width "60"
+        (scale  :value VAL  :min "0"    :max "100"  :orientation "horizontal")
+    )
+)
+
+;; CONNECTIONS ;;
+(defwidget connections []
+    (box :orientation "vertical"
+        (dataslider :VAL 100)
+    )
+
+)
+
+;; MENU INFO ;;
+(defwidget menuinfo []
+    (box :orientation "vertical"
+        :class "menuouter"
+        :space-evenly false
+
+        (time)
+
+        (image :image-width "310"
+            :class "menuinner"
+            :path "/home/nova/Pictures/peeps.jpg"
+        )
+
+        (box :height "50"
+            :class "menuinner"
+            "System Information"
+        )
+
+
+        (box :height "50"
+            :class "menuinner"
+            "Connections"
+        )
+
+        (box :class "menulayer"
+            :orientation "vertical"
+            :spacing 15
+            :class "menulayer"
+                (menuwifi)
+                (menublutu)
+
+        )
+    )
+)
+
+(defwidget leftmenu []
+    (box :orientation "vertical"
+        :space-evenly false
+        
+        (box    :height "50"    :width "350"    :halign "center"
+        :class "menutitle"
+        "🟆       Welcome, NOv4       🟆"
+        )
+        
+        (box :class "menucontent"
+            (menuinfo)
+        )
+
+        (box    :height "30"    :width "350"    :halign "center"
+        :class "menuend"
+        )
+    )
+)
+
+(defwindow leftdiv
+            :monitor '[0]'
+            :stacking "bg"
+
+            :geometry (geometry :x "38"
+                                :y "15"
+                                :width "350"
+                                :height "0%"
+                                :anchor "top left")
+
+            :exclusive true
+            :focusable false
+
+            (leftmenu)
+)

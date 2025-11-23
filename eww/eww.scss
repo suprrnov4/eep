@@ -1,0 +1,184 @@
+* {
+  all: unset;
+  background: transparent;
+  font-family: Maple Mono;
+}
+
+$white: #faf2df;
+$black: #200717;
+$gris: #581D41;
+$purple: #722D58;
+$pink: #eb5b80;
+$blue: #82dfc3;
+
+
+window {
+  background: transparent;
+}
+
+.container {
+  background-color: #200717;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #faf2df;
+  color: #faf2df;
+  border-radius: 12px;
+}
+.userinfo-parent {
+  background-color: #200717;
+  color: #faf2df;
+  border-radius: 12px;
+
+  border-width: 1px;
+  border-style: solid;
+  border-color: #faf2df;
+}
+.userinfo-child {
+  color: #faf2df;
+}
+.label {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.button-label {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.completelytrans {
+  background: none;
+}
+
+.button {
+  border-radius: 6px;
+  margin: 10px;
+}
+.button:hover {
+  background-color: #eb5b80;
+  color: #141216;
+  transition-duration: 150ms;
+}
+.button:active {
+  background-color: #722D58;
+  color: #141216;
+  transition-duration: 150ms;
+}
+
+.poweroff-button {
+  border-radius: 6px;
+  margin: 10px;
+}
+.poweroff-button:hover {
+  background-color: #faf2df;
+  color: #200717;
+  transition-duration: 150ms;
+}
+.poweroff-button:active {
+  background-color: #722D58;
+  color: #200717;
+  transition-duration: 150ms;
+}
+
+.suspend-button {
+  border-radius: 6px;
+  margin: 10px;
+}
+.suspend-button:hover {
+  background-color: #82dfc3;
+  color: #200717;
+  transition-duration: 150ms;
+}
+.suspend-button:active {
+  background-color: #722D58;
+  color: #200717;
+  transition-duration: 150ms;
+}
+
+.icon-label {
+  font-size: 45px;
+  font-weight: normal;
+}
+
+
+// Shadow for div
+.leftdiv {
+  box-shadow: $black 0px 0px 30px 0px;
+}
+
+// Menu Title
+.menutitle {
+  background-color: $black;
+  color: $white;
+
+  font-size: 16px;
+  font-style:italic;
+  font-weight: bold;
+  border-radius: 8px 8px 0px 0px;
+}
+
+// Content for the left panel
+// DON'T add margin here >:(
+.menucontent {
+  background-color: $gris;  
+}
+
+// Outer margin for menu items
+.menuouter {
+  margin: 20px 20px 0px;
+}
+
+// Inner config for menu items
+.menuinner {
+  margin: 20px 0px;
+  color: $white;
+  font-size: 16px;
+  font-style:italic;
+  font-weight: bold;
+}
+
+// The time :)
+.menutime {
+  background-color: $pink;
+  border-radius: 4px;
+  
+  color: $white;
+  font-size: 52px;
+  font-weight: bold;
+}
+
+.smoltext {
+  font-size: 30px;
+}
+
+.line {
+  font-size: 45px;
+  margin: -20px 0px;
+}
+
+.menulayer {
+  margin-bottom: 20px;
+}
+
+.menumini {
+  background-color: $pink;
+  border-radius: 4px;
+
+  color: $white;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+// Slider borders
+.datasliders {
+  background-color: $white;
+  border: 2px solid $pink;
+  border-radius: 5px;
+  
+}
+
+// Menu Footer
+.menuend {
+  background-color: $black;
+  border-radius: 0px 0px 8px 8px;
+}
